@@ -60,7 +60,7 @@ Query parameter:
 http://localhost:8080/api/v1/drone?state=idle
 
 Response:
-
+`
 [
     {
         "model": "Lightweight",
@@ -112,7 +112,7 @@ Response:
         "serial_number": "D4",
         "battery_capacity": 100
     }
-]
+]`
 
 **POST** api/v1/drone
 
@@ -121,21 +121,20 @@ This is used to register a new drone. Returns the drone created.
 http://localhost:8080/api/v1/drone
 
 Request:
-
-    {
+ `{
     "serial_number":"D22",
     "model":"Heavyweight"
-}
+}`
 
 Response:
 
-{
+`{
     "model": "Heavyweight",
     "state": "IDLE",
     "meds": null,
     "serial_number": "D22",
     "battery_capacity": 50
-}
+}`
 
 **GET** api/v1/drone/{serial_number}
 

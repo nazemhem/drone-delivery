@@ -121,7 +121,7 @@ public class DroneService {
         if (!droneOptional.isPresent())
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No drone found with this serial number: " + serialNumber);
         drone = droneOptional.get();
-        if (newDrone.getSerialNumber() != null)
+        if (newDrone.getSerialNumber() != null && !newDrone.getSerialNumber().equals(serialNumber))
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cannot update serial number. Delete this and register a new drone.");
         if (newDrone.getBatteryCapacity() != 0)
             drone.setBatteryCapacity(newDrone.getBatteryCapacity());
